@@ -26,4 +26,4 @@ jobs:
       - run: dep ensure
       - run: go build -o go-api-test
       - store_artifacts:
-        - path go-api-test
+          path: go-api-test
