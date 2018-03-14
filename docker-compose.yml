@@ -1,0 +1,20 @@
+version: '2'
+services:
+  postgres:
+    image: postgres:9.6
+    environment:
+      POSTGRES_USER: gotut
+      POSTGRES_PASSWORD: gotut
+  gotut:
+    depends_on:
+      - postgres
+    image: gotut:latest
+    restart: on-failure
+    ports:
+      - "8654:8654"
+    environment:
+      DBHOST: postgres
+      PORT: 8654
+      DBUSER: gotut
+      DBNAME: gotut
+      PASSWORD: gotut
