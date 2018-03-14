@@ -25,4 +25,5 @@ jobs:
       - run: go get -v github.com/golang/dep/cmd/dep
       - run: dep ensure
       - run: go build -o go-api-test
-      - run: mv go-api-test $CIRCLE_ARTIFACTS
+      - store_artifacts:
+        - path go-api-test
